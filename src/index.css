@@ -1,13 +1,261 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: rgb(248, 171, 157);
+  padding: 0 5% 0 5%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #556b2f;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* ------tomato-------- */
+
+.tomato-light-1 {
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.tomato-light-2 {
+  width: 1rem;
+  height: 2rem;
+  background: white;
+  border-radius: 70%;
+  transform: rotate(25deg);
+  opacity: 0.7;
+  position: absolute;
+  top: 45%;
+  right: 20%;
+}
+
+/* containter */
+
+.row {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.container:nth-child(4) {
+  border-top: 1px solid;
+  width: 100%;
+  height: 300px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Title Section */
+
+.title {
+  width: 100%;
+  text-align: center;
+  height: 60px;
+}
+
+/* task Section */
+
+.draggedEnter .todoItem {
+  border: 2px dashed mediumseagreen;
+  opacity: 0.5;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.transition {
+  transition: 0.1s ease-in;
+}
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 3px solid #555;
+}
+
+/* menu */
+
+.menu {
+  width: 100%;
+  height: 60px;
+  background: mediumseagreen;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: palegreen;
+}
+
+.blank {
+  width: 100%;
+  height: 80px;
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.plusIcon::before,
+.plusIcon::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  left: 15%;
+  height: 5px;
+  background: rgba(255, 255, 255);
+  border-radius: 5px;
+  transform: translateY(-15px);
+  transition: all 0.3s ease-in 3s;
+}
+
+.plusIcon::after {
+  transform: rotate(180deg);
+}
+
+.plusIcon::before {
+  transform: rotate(90deg);
 }
